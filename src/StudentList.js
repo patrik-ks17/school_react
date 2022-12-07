@@ -18,7 +18,7 @@ export function StudentList() {
 		<div className="row">
 			<h1>2/14 Szoftverfejlesztők</h1>
 			{students.map((student) => (
-				<Diak student={student}/>
+				<Diak student={student} key={student._id.toString()}/>
 			))}
 		</div>
 	)
