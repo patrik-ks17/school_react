@@ -1,5 +1,5 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 import {StudentList} from './StudentList';
 
 function App() {
