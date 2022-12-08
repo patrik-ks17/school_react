@@ -13,7 +13,7 @@ export function StudentList() {
 			.finally(() => {
 				setFetchPending(false);
 			});
-	}, []);
+	}, [students]);
 	return (
 		<div className="row">
 			<h1>2/14 Szoftverfejlesztők</h1>

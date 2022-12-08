@@ -1,5 +1,5 @@
 body {
-	background-color: rgba(37, 112, 144, 0.842);
+	background-color: rgba(40, 123, 158, 0.862);
 	color: white;
 }
 
@@ -13,7 +13,7 @@ body {
 
 .card {
 	background-color: rgba(40, 123, 158, 0.862);
-	height: 200px;
+	height: 250px;
 	border: 2px solid rgb(0, 0, 0);
 	border-radius: 10px;
 	padding: 10px;
@@ -22,4 +22,8 @@ body {
 
 h1 {
 	margin-bottom: 20px;
+}
+
+button {
+	margin: 5px;
 }
