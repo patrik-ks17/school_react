@@ -1,4 +1,4 @@
-import {Diak, edited} from './Diak';
+import {Diak, editing} from './Diak';
 import {NewDiak} from './NewDiak';
 import { useState, useEffect } from 'react';
 import { EditDiak } from './EditDiak';
@@ -16,7 +16,7 @@ export function StudentList() {
 			.finally(() => {
 				setFetchPending(false);
 			});
-	}, [students, edited]);
+	}, [students, editing]);
 	return (
 		<div className="row">
 			<h1>2/14 Szoftverfejlesztők</h1>
@@ -24,7 +24,7 @@ export function StudentList() {
 				<Diak student={student} key={student._id.toString()} />
 			))}
 			<NewDiak/>
-			<EditDiak student={edited}/>
+			<EditDiak student={editing}/>
 		</div>
 	)
 }

@@ -1,15 +1,16 @@
 import { CCard, CCardHeader, CListGroup, CListGroupItem, CCardFooter } from "@coreui/react";
 
 
-let edited = "";
-function setEdited(value) {
-	edited = value;
+let editing = "";
+function setEditing(value) {
+	editing = value;
 }
-export {edited, setEdited};
+export {editing, setEditing};
 
 
 
 export function Diak({ student }) {
+	
 	async function addGrade(grade) {
 		const body = JSON.stringify({
 			id: student._id.toString(),
@@ -38,8 +39,8 @@ export function Diak({ student }) {
 		}
 	}
 
-	function editedStudent(student) {
-		edited = student;
+	function editingStudent(student) {
+		editing = student;
 	}
 	
 	return (
@@ -60,8 +61,8 @@ export function Diak({ student }) {
 							<button type='button' onClick={() => addGrade(grade)} key={grade}>{grade}</button>
 						))
 					}
-					<img src="./edit.png" onClick={() => editedStudent(student)}/>
-					<img src="./delete.png" onClick={() => torol()}/>
+					<img src="./edit.png" alt="" onClick={() => editingStudent(student)}/>
+					<img src="./delete.png" alt="" onClick={() => torol()}/>
 			</CCardFooter>
 			</CCard>
 		</div>

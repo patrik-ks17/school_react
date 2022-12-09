@@ -13,7 +13,7 @@ body {
 
 .card {
 	background-color: rgba(40, 123, 158, 0.862);
-	height: 250px;
+	min-height: 250px;
 	border: 2px solid rgb(0, 0, 0);
 	border-radius: 10px;
 	padding: 10px;
@@ -26,4 +26,16 @@ h1 {
 
 button {
 	margin: 5px;
+}
+
+.modify_student, .add_student   {
+	background-color: rgba(75, 75, 75, 0.897);
+}
+
+.modify_student button, .add_student button { 
+	background-color: rgb(79, 177, 227);
+}
+
+.modify_student input, .add_student input { 
+	width: 70%;
 }

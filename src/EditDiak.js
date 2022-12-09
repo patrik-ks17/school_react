@@ -1,7 +1,8 @@
 import { CCard, CCardHeader, CListGroup, CListGroupItem, CCardFooter } from "@coreui/react";
-import {edited, setEdited} from './Diak'
+import {editing, setEditing} from './Diak'
 
 export function EditDiak({ student }) {
+	
 	async function modosit(student) {
 		const nev = document.querySelector('#edit_nev').value;
 		let lastName = nev.split(' ')[0]
@@ -10,12 +11,12 @@ export function EditDiak({ student }) {
 			firstName = nev.split(' ')[1] + " " + nev.split(' ')[2];
 		else
 			firstName = nev.split(' ')[1]
-		const sz_ev = document.querySelector('#edit_sz_ev');
+		const sz_ev = document.querySelector('#edit_sz_ev').value;
 
 		const body = JSON.stringify({ 
 			firstName: firstName, 
 			lastName: lastName,
-			birthYear: sz_ev.value
+			birthYear: sz_ev
 		})
 		const response = await fetch("http://localhost:9000/students/" + student._id.toString(), {
 			method: "PUT",
@@ -26,17 +27,16 @@ export function EditDiak({ student }) {
 		})
 		if (!response.ok) {
 			alert('Sikertelen tanuló módosítás!')
-			console.log(student);
 			return
 		}
 		else
-			setEdited("")
+			setEditing("")
 	}
 	
-	if (edited != "") {
+	if (editing !== "") {
 		return ( 
 			<div className="col-md-4">
-				<CCard>
+				<CCard className={"modify_student"}>
 				<CCardHeader>Név: <input type="text" id="edit_nev" defaultValue={student.lastName + " " + student.firstName}/></CCardHeader>
 				<CListGroup flush>
 					<CListGroupItem>Születési év: <input type="number" id="edit_sz_ev" defaultValue={student.birthYear}/></CListGroupItem>
